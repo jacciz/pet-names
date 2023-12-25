@@ -6,7 +6,8 @@ source("parameters.R")
 # load the neural network model
 model <- load_model_hdf5("model.h5")
 
-
+generate_name(model, character_lookup, max_length)
+generate_many_names(10, model, character_lookup, max_length)
 # a function that generates a single pet name from a model
 generate_name <- function(model, character_lookup, max_length, temperature=1){
   # model - the trained neural network
